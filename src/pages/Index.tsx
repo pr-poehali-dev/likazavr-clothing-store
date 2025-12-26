@@ -79,13 +79,13 @@ const Index = () => {
   const cartItemsCount = cart.reduce((sum, item) => sum + item.quantity, 0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50">
+    <div className="min-h-screen bg-background">
       <header className="sticky top-0 z-50 bg-white/80 backdrop-blur-lg border-b border-purple-100 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-2">
               <div className="text-4xl">🦖</div>
-              <h1 className="text-3xl font-display font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+              <h1 className="text-3xl font-display font-bold text-primary">
                 Ликазавр
               </h1>
             </div>
@@ -149,7 +149,7 @@ const Index = () => {
                           <span>Итого:</span>
                           <span className="text-primary">{totalPrice} ₽</span>
                         </div>
-                        <Button className="w-full bg-gradient-to-r from-primary via-secondary to-accent hover:opacity-90 transition-opacity text-lg py-6">
+                        <Button className="w-full bg-primary hover:bg-primary/90 transition-colors text-lg py-6">
                           Оформить заказ
                         </Button>
                       </div>
@@ -165,12 +165,12 @@ const Index = () => {
       <main className="container mx-auto px-4 py-12">
         {activeSection === 'home' && (
           <div className="space-y-16 animate-fade-in">
-            <section className="relative overflow-hidden rounded-3xl bg-gradient-to-r from-primary via-secondary to-accent p-12 md:p-20 text-white">
+            <section className="relative overflow-hidden rounded-3xl bg-primary p-12 md:p-20 text-primary-foreground">
               <div className="relative z-10 max-w-2xl">
                 <h2 className="text-5xl md:text-7xl font-display font-bold mb-6 animate-scale-in">
                   Мода, которая говорит
                 </h2>
-                <p className="text-xl md:text-2xl mb-8 text-white/90">
+                <p className="text-xl md:text-2xl mb-8 opacity-90">
                   Уникальная одежда и украшения ручной работы. Создай свой стиль с Ликазавром!
                 </p>
                 <div className="flex flex-wrap gap-4">
@@ -178,15 +178,15 @@ const Index = () => {
                     <Icon name="Sparkles" size={20} className="mr-2" />
                     Смотреть каталог
                   </Button>
-                  <Button size="lg" variant="outline" className="text-lg px-8 bg-white/10 border-white/30 text-white hover:bg-white/20" onClick={() => setActiveSection('tailors')}>
+                  <Button size="lg" variant="outline" className="text-lg px-8 bg-primary-foreground/10 border-primary-foreground/30 hover:bg-primary-foreground/20" onClick={() => setActiveSection('tailors')}>
                     <Icon name="Users" size={20} className="mr-2" />
                     Наши портные
                   </Button>
                 </div>
               </div>
-              <div className="absolute top-0 right-0 w-1/2 h-full opacity-20">
-                <div className="absolute top-10 right-10 w-32 h-32 bg-white rounded-full blur-3xl"></div>
-                <div className="absolute bottom-10 right-32 w-48 h-48 bg-white rounded-full blur-3xl"></div>
+              <div className="absolute top-0 right-0 w-1/2 h-full opacity-10">
+                <div className="absolute top-10 right-10 w-32 h-32 bg-primary-foreground rounded-full blur-3xl"></div>
+                <div className="absolute bottom-10 right-32 w-48 h-48 bg-primary-foreground rounded-full blur-3xl"></div>
               </div>
             </section>
 
@@ -213,7 +213,7 @@ const Index = () => {
                     </CardHeader>
                     <CardFooter className="flex items-center justify-between">
                       <span className="text-2xl font-bold text-primary">{product.price} ₽</span>
-                      <Button onClick={() => addToCart(product)} className="bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+                      <Button onClick={() => addToCart(product)} className="bg-primary hover:bg-primary/90">
                         <Icon name="Plus" size={18} className="mr-2" />
                         В корзину
                       </Button>
@@ -332,7 +332,7 @@ const Index = () => {
                     </div>
                   </CardContent>
                   <CardFooter>
-                    <Button className="w-full bg-gradient-to-r from-primary to-secondary hover:opacity-90">
+                    <Button className="w-full bg-primary hover:bg-primary/90">
                       <Icon name="MessageCircle" size={18} className="mr-2" />
                       Заказать пошив
                     </Button>
@@ -423,7 +423,7 @@ const Index = () => {
         )}
       </main>
 
-      <footer className="bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 border-t mt-20">
+      <footer className="bg-card border-t mt-20">
         <div className="container mx-auto px-4 py-12">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
